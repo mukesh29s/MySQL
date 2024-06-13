@@ -28,3 +28,8 @@ SPOOL OFF
 SET PAGESIZE 14
 SET FEEDBACK ON
 SET VERIFY ON
+
+------------------------------------- Or this can be done using this simple command. --------------------------------------------------
+create role TCM_RO;
+Select 'GRANT SELECT ON TCM.'||object_name||' TO TCM_RO;' From dba_objects Where Owner='SCHEMA_NAME' and object_type in('TABLE','VIEW');
+
